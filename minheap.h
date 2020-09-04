@@ -3,19 +3,16 @@
 
 #include <climits>
 
-
-
-
-
 template<class T> 
 class minheap { // main Minheap class
+	private:
 	
-	int size;
-	int capacity;
-	T* array;
+		int size;
+		int capacity;
+		T* array;
 	
-	int heapify(int elem_position); // private; to be accessed only by other member functions.
-	void swap(T&, T&); // swap 2 nodes in heap
+		int heapify(int elem_position); // private; to be accessed only by other member functions.
+		void swap(T&, T&); // swap 2 nodes in heap
 	
 	public :
 		minheap(T* array, int size , int capacity) {
@@ -44,7 +41,11 @@ class minheap { // main Minheap class
 		int heap_increase_key(int elem_position, int new_value); // update element by a higher value
 		
 		int heap_sort(T* array); // sorts heap and stores it in array.
-		int show_element(int elem_position);	
+		int show_element(int elem_position);
+		
+		~minheap() {
+			delete(array);
+		}	
 };
 
 template<class T>
@@ -56,24 +57,6 @@ template<class T>
 int minheap<T>::get_size() {
 	return size;
 }
-template<class T>
-int minheap<T>::insert(T element)
-{
-	if(size==capacity) //if heap is full
-	{
-		return capacity; // heap full
-	}
-		
-	array[size++]=element; //initially size=0; It increases after insertion of every element
-	
-	for(int i=(size-1)>>1; i>=0; i--)//heapify starts from the least non=leaf node. This is b'coz leaves are always heapified.
-	{
-		heapify(i);
-	}
-	
-	return 0;
-}
-
 
 template<class T>
 void minheap<T>:: swap(T& elem1, T& elem2) {
