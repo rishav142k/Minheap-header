@@ -1,6 +1,6 @@
 # Minheap-header
 
-This is a project in an attempt to extend the functionality of minHeap in C++ STL. This header file consists of various important functions such as update values, etc. This header file is made in C++. Another thing which is implemented here is the code is kept as generic as possible to enable the use of other user defined data types as well as built-in data types as well. See the detailed implementation of how to use the user defined data type is given in ```main_otherdatatypes.cpp```
+This is a project in an attempt to extend the functionality of minHeap in C++ STL. This header file consists of various important functions such as update values, etc. This header file is made in C++. Another thing which is implemented here is the code is kept as generic as possible to enable the use of other user defined data types as well as built-in data types as well. See the detailed implementation of how to use the user defined data type is given in ```main_otherdatatypes.cpp```. Implementation of integer data type is pretty straightforward and is given in ```main_int.cpp```. 
 
 
 
